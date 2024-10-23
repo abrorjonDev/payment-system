@@ -1,0 +1,12 @@
+Waiting for postgres...
+PostgreSQL started
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  No migrations to apply.
+asgiref==3.8.1
+Django==4.2.3
+gunicorn==21.2.0
+packaging==24.1
+psycopg2-binary==2.9.6
+sqlparse==0.5.1
