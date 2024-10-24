@@ -31,6 +31,8 @@ class MerchantCategory(BaseModel):
 
 class Merchant(BaseModel):
     image = models.ImageField(upload_to="images/merchants/", null=True, blank=True)
+    category = models.ForeignKey('MerchantCategory', on_delete=models.SET_NULL,
+                                 null=True, blank=True, related_name="merchants")
 
     class Meta:
         verbose_name = _("Merchant")
