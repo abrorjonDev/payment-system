@@ -17,7 +17,7 @@ class Gender(models.TextChoices):
 class User(AbstractUser):
     username = None
     phone_number = models.CharField(max_length=20, unique=True)
-    phone_number2 = models.CharField(max_length=20, unique=True)
+    phone_number2 = models.CharField(max_length=20, unique=True, null=True, blank=True)
     birthdate = models.DateField(null=True, blank=True)
     gender = models.CharField(choices=Gender.choices, max_length=1, null=True, blank=True)
     image = models.ImageField(upload_to="images/profile/", null=True, blank=True)
