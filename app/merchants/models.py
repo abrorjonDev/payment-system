@@ -44,6 +44,7 @@ class Merchant(BaseModel):
 
 class MerchantField(models.Model):
     merchant = models.ForeignKey(Merchant, on_delete=models.CASCADE, related_name="fields")
+    # TODO: need to add labels for rendering user cabinet
     name = models.CharField(max_length=255)
     value = models.CharField(max_length=255)
     required = models.BooleanField(default=False)

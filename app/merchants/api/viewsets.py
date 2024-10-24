@@ -28,6 +28,10 @@ class MerchantCategoryViewSet(SerializerMixin, ModelViewSet):
     queryset = MerchantCategory.objects.all()
     serializer_class = MerchantCategorySerializer
     read_serializer_class = MerchantCategoryReadSerializer
+    filterset_fields = {
+        'status': ['exact'],
+        'name_uz': ['istartswith']  # TODO: must implement FilterSet class for i18n names filtering
+    }
 
 
 class MerchantViewSet(SerializerMixin, ModelViewSet):
@@ -36,6 +40,7 @@ class MerchantViewSet(SerializerMixin, ModelViewSet):
     read_serializer_class = MerchantDetailSerializer
     filterset_fields = {
         'category': ['exact'],
+        'status': ['exact'],
         'name_uz': ['istartswith'] # TODO: must implement FilterSet class for i18n names filtering
     }
 
@@ -45,5 +50,5 @@ class MerchantFieldViewSet(SerializerMixin, ModelViewSet):
     read_serializer_class = MerchantFieldsSerializer
     filterset_fields = {
         'merchant': ['exact'],
-        'required': ['exact']
+        'required': ['exact'],
     }
