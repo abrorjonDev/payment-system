@@ -48,7 +48,4 @@ class MerchantFieldViewSet(SerializerMixin, ModelViewSet):
     queryset = MerchantField.objects.all()
     serializer_class = MerchantFieldsSerializer
     read_serializer_class = MerchantFieldsSerializer
-    filterset_fields = {
-        'merchant': ['exact'],
-        'required': ['exact'],
-    }
+    filterset_fields = 'merchant', 'required',
